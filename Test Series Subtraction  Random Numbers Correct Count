@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Main{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        int count = 0;
+        int correct = 0;
+        String output = "";
+        Long startTime = System.currentTimeMillis();
+        while (count < 5){
+            int num1 = random.nextInt(11);
+            int num2 = random.nextInt(11);
+            int temp ;
+            if (num1 < num2){
+                temp = num1;
+                num1 = num2;
+                num2 = temp;
+            }
+
+            System.out.printf("What is %d - %d = ",num1,num2);
+            int answer = input.nextInt();
+            if (answer == num1-num2) {
+                System.out.println("You are correct\n");
+                correct +=1;
+            }
+            else if(answer != (num1-num2))
+                System.out.println("You are wrong\nYour answer should be "+num1+" - "+num2+" = "+( num1- num2 ));
+            output += "\n"+num1+"-"+num2+"="+(answer)+((answer == (num1-num2))?"  correct  " :"  wrong  ");
+            count+=1;
+        }
+        Long endTime = System.currentTimeMillis();
+        System.out.println("Correct count is: "+correct+"  \n"+output);
+        System.out.println("Time Taken in quiz: "+(endTime-startTime)/100.0+" seconds");
+    }
+}
