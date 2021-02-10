@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Main{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+        
+        //Generating Random number 
+        System.out.println("Guess Number between 0-100");
+        int number = random.nextInt(101);
+        
+        //User guess input 
+        System.out.print("Enter your guess: ");
+        int guess = input.nextInt();
+        
+        //Checking | Logic | Computation
+        while( guess != number){
+            if (guess < number)
+                System.out.println("Your number is low");
+            else if (guess > number)
+                System.out.println("Your number is high");
+            System.out.print("Enter your guess: ");
+            guess = input.nextInt();
+        }
+        System.out.println("Yes the number is: "+number);
+    }
+}
