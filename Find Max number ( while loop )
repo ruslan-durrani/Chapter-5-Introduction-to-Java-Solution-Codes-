@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number ;int max;
+        System.out.print("Enter number ( 0 for end ) ");
+        number = input.nextInt();
+        max = number;
+        while (number != 0 ){
+            if (number > max){
+                max = number;
+            }
+            System.out.print("Enter number ( 0 for end ) ");
+            number = input.nextInt();
+        }
+        System.out.println("The maximum number so far is: "+max);
+    }
+}
