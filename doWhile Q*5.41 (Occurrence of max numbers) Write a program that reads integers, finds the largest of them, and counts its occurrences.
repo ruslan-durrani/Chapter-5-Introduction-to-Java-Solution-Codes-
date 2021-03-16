@@ -1,0 +1,25 @@
+package russi;
+import java.util.*;
+public class OccuranceOfMaxNumbers_Q_5_41 {
+    public static void main(String[] args) {
+    
+        Scanner input = new Scanner(System.in);
+        int number = 0;
+        int occuranceOfNumber = 0;
+        int maximumNumber;
+        maximumNumber = 0;
+        System.out.print("Enter number: (0 to exit) ");
+        do {
+            if (number > maximumNumber) {
+                maximumNumber = number;
+                occuranceOfNumber = 1;
+            } else if (number == maximumNumber)
+                occuranceOfNumber += 1;
+
+            number = input.nextInt();
+        } while (number != 0);
+        System.out.println("The largest number is: "+maximumNumber );
+        System.out.println("The occurrence count of the largest number is: "+occuranceOfNumber);
+
+    }
+}
