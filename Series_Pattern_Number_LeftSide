@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class SeriesPatternLeft {
+  public static void main(String[] args) {
+    // int h = 0;
+    for (int i = 6; i >= 1 ; i-- ){
+      System.out.println();
+      for (int k = 1 ; k<=i ; k++){
+        System.out.print(" ");
+        // h++;
+      }
+      for (int j = 6 ; j >=i; j--){
+        System.out.print(j-i+1);
+      }
+  }
+}
+}
