@@ -1,0 +1,22 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter number: ");
+    int number = input.nextInt();
+    int factors = 1;
+    int product = 1;
+    while(true){
+      //statements
+      if ( product == number){
+        break;
+      }
+      if ( number % factors == 0 ){
+        System.out.print(factors+" ");
+        product *= factors;
+      }
+      factors++;
+    }
+    System.out.print("= "+number);
+  }
+}
