@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int number ;int max;
+        int number , max;
         System.out.print("Enter number ( 0 for end ) ");
         number = input.nextInt();
         max = number;
