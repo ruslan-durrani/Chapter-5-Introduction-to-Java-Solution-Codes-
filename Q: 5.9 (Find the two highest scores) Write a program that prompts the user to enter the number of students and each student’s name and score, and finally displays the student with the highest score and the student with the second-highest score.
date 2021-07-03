@@ -1,40 +1,28 @@
+package PF_examination;
 import java.util.*;
-public class Two_Highest_Scores {
+public class Practice {
     public static void main(String[] args) {
-        //Title Display
-        System.out.println("***************Two High Scores***************\n");
-        //Scanner Object
+        System.out.println("Two Highest Score");
         Scanner input = new Scanner(System.in);
-        // Strings To Hold The names of First And Second Highest Score Holder 
-        String firstHighestName = "";
-        String secondHighestName = "";
-        // Int Variables Holding The highest and Second highest Score holders
-        int firstHighestScore = 0;
-        int secondHighestScore = 0;
-        System.out.print("Enter number of Students: ");
-        int numberOfStudents = input.nextInt();
-        //Loop to ask user Their Score AND NAMES    
-        for (int i = 1; i <= numberOfStudents; i++) {
-            System.out.print(i+")********\nEnter Name: ");
-            String name = input.next();
-            System.out.print("Enter Score: ");
-            int studentsScore = input.nextInt();
-            // Selections that Keeps on Swapping the Data for first and seconds High Achievers
-            if (studentsScore >firstHighestScore){
-                secondHighestScore = firstHighestScore;
-                secondHighestName = firstHighestName.toUpperCase();
-                firstHighestScore = studentsScore;
-                firstHighestName = name.toUpperCase();
+        System.out.print("Number of students: ");
+        int students = input.nextInt();
+        int first_max = 0;
+        int second_max = 0;
+        for (int i = 0; i < students ; i++) {
+            System.out.printf("Enter student %d score: ",i);
+            int score = input.nextInt();
+            if(score > first_max){
+                first_max = score;
             }
-            else if( studentsScore < firstHighestScore && studentsScore > secondHighestScore){
-                secondHighestScore = studentsScore;
-                secondHighestName = name.toUpperCase();
+            else if(score == first_max){
+                second_max = score;
             }
+            if(score>second_max && score < first_max)
+                second_max = score;
+            if(score == second_max)
+                second_max = score;
         }
-        //Display of final results
-        System.out.println("The Student that is Topper is: "+firstHighestName);
-        System.out.println("His Score is: "+firstHighestScore);
-        System.out.println("The Student that is Second: "+secondHighestName);
-        System.out.println("His Score is: "+secondHighestScore);
+        System.out.println("Highest Score is: "+first_max);
+        System.out.println("Second Highest score is: "+second_max);
     }
 }
